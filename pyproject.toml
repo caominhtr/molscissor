@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "molscissor"
+version = "0.1.0"
+description = "MolSCISSOR: Molecular Similarity-aware Chemical Inter-class Stratified Split for Objective Repartitioning"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "six",
+    "rdkit==2025.3.4",
+    "deepchem==2.5.0",
+    "oddt",
+    "scikit-learn==1.7.2",
+    "xgboost==3.2.0",
+    "optuna==4.4.0",
+
+    "numpy<2.1.0",
+    "scipy==1.16.3",
+    "pandas==2.2.2",
+
+    "torch==2.6.0",
+    "torch-geometric>=2.6.0",
+    "transformers[torch]>=4.40.0",
+    "tensorflow-cpu>=2.18.0",
+    "tf-keras",
+
+    "numba>=0.60.0",
+    "ortools>=9.10.0",
+
+    "prettytable"
+]
+
+[project.scripts]
+molscissor = "molscissor.main:main"
+
+[tool.setuptools.package-data]
+molscissor = ["*.pkl.gz"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
