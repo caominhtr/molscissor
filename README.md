@@ -125,7 +125,7 @@ molscissor      -active Data/example/active.smi \
 ```
 molscissor      -active Data/example/active.smi \
                 -inactive Data/example/inactive.smi \
-                -algo bitbirch \
+                -algo bblean \
                 -outdir result 
 ```
 
