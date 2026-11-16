@@ -74,9 +74,13 @@ pip install --no-build-isolation -e . --find-links https://download.pytorch.org/
 <a id="Running"></a>
 
 ### Step 1: Input preparation
-Two separated files containing active and inactive compounds are required. Each row corresponds to a SMILES string. The second column is the corresponding ID (optional). 
+Two separated files containing active and inactive compounds are required. Each row corresponds to a SMILES string. 
 
-The example of dataset in `.smi` format can be found at `Data/example/` including `active.smi` and `inactive.smi`.
+- The first column: SMILES string
+- The second column: corresponding ID.
+- The third column: corresponding cluster index, **required only when using an external clustering algorithm**; otherwise, this column can be omitted. Pre-clustering active and inactive datasets separately is recommended to optimize subsequent MolSCISSOR allocation.
+
+The example of dataset in `.smi` format can be found at `Data/example/` including `active.smi` and `inactive.smi`, and examples of dataset with cluster index `active_cluster.smi` and `inactive_cluster.smi`.
 
 ### Step 2: Running MolSCISSOR
 
@@ -124,6 +128,17 @@ molscissor      -active Data/example/active.smi \
                 -algo bitbirch \
                 -outdir result 
 ```
+
+#### 2.5. Running only MolSCISSOR allocation on pre-defined cluster index from other clustering algorithms
+
+
+```
+molscissor      -active Data/example/active_cluster.smi \
+                -inactive Data/example/inactive_cluster.smi \
+                -algo other \
+                -outdir result 
+```
+
 
 ## Metric calculation
 <a id="Metric"></a>
