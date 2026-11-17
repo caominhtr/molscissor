@@ -183,7 +183,7 @@ id,ROC-AUC,NEF1%,BEDROC(alpha=160.9),seed
 
 **1. After 100 trials of optimization, what if no optimal split is obtained?**
 
-Although this scenario is too extreme to happen, try to change the `k` (split training/test ratio), or increase the `iter` (number of optimization steps).
+Although this scenario is too extreme to happen, try to change the `k` (split training/test ratio), or increase the `iter` (number of optimization steps), or increase search space of threshold `upperActive` and `upperInactive`.
 
 **2. Why does my final split not have the AVE bias as low as expected after optimization?**
 
