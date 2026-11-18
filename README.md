@@ -1,4 +1,4 @@
-# Resplitting LIT-PCBA with MolSCISSOR: A Memory-Efficient, Quasi-Deterministic Framework for Reducing Structural and Physicochemical Bias
+# Resplitting LIT-PCBA with MolSCISSOR: A Memory-Efficient, Quasi-Deterministic Framework for Reducing Structural and Physicochemical Biases
 
 Reliable training-test partitioning is essential for developing and evaluating virtual screening (VS) methods, 
 particularly in the era of machine learning (ML). However, existing molecular dataset splitting approaches do not 
