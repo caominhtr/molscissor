@@ -42,7 +42,7 @@ LIT-PCBA, bblean-LIT-PCBA, SPLIT-PCBA)
 - `metric/`: This folder contains structural similarity-related metrics of three LIT-PCBA training-test variants (AVE-unbiased 
 LIT-PCBA, bblean-LIT-PCBA, SPLIT-PCBA)
 
-Compositions of three LIT-PCBA training-test variants (AVE-unbiased LIT-PCBA, bblean-LIT-PCBA, SPLIT-PCBA), and relevant data to demonstrate the data-order dependency in the bblean clustering algorithm can be found in: [**Zenodo**]()
+Compositions of three LIT-PCBA training-test variants (AVE-unbiased LIT-PCBA, bblean-LIT-PCBA, SPLIT-PCBA), and relevant data to demonstrate the data-order dependency in the bblean clustering algorithm can be found in: [**Zenodo**](https://zenodo.org/records/23942580)
 
 ## Installation 
 <a id="Installation"></a>
