@@ -96,18 +96,20 @@ def cal_rdkit(train, test):
 
     return train_scaled, test_scaled
 
-def generate_morgan(df, rad=2, bit_len=2048, smiles_col='SMILES'):
-    n_samples = len(df)
-    
-    fps_array = np.zeros((n_samples, bit_len), dtype=np.uint8)
-    
-    for i, smiles in enumerate(df[smiles_col]):
-        mol = Chem.MolFromSmiles(smiles)
+def generate_morgan(df, rad=2, bit_len=2048, smiles_col="SMILES"):
+    fps = []
+
+    for _, row in df.iterrows():
+        item = row[smiles_col]
+        mol = Chem.MolFromSmiles(item) if isinstance(item, str) else item
+
         if mol is not None:
-            bv = AllChem.GetMorganFingerprintAsBitVect(mol, rad, nBits=bit_len)
-            DataStructs.ConvertToNumpyArray(bv, fps_array[i])
-            
-    return pd.DataFrame(fps_array)
+            fp = np.array(
+                AllChem.GetMorganFingerprintAsBitVect(mol, rad, nBits=bit_len)
+            )
+            fps.append(fp)
+
+    return pd.DataFrame(np.array(fps), dtype=np.uint8)
 
 def generate_daylight(df, bit_len=2048, smiles_col='SMILES'):
     n_samples = len(df)
